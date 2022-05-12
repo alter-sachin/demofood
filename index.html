@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Menu AR</title>
+
+  <link rel="stylesheet" href="./styles.css" />
+
+
+ 
+
+  <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+
+</head>
+
+<body>
+   <div id="menu">
+    <div id="menulist">
+      <ul>
+        <li><a href="#starters">starters</a></li>
+      <li><a href="#mains">mains</a></li>
+         <li><a href="#Dessert">Dessert</a></li>
+    </ul>
+    </div>
+    <button class="button-5" role="button" onclick="myFunction()"> 
+      Menu
+    </button>
+    </div>
+    <div id="videobox">
+        <video id="bot"  autoplay muted controls loop>
+            <source id="mp4source" src="https://foodassets.s3.ap-south-1.amazonaws.com/menu/videos/base_happy_squared.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="buttonlist">
+        
+
+        </div>
+
+    </div>
+  <div id="main"></div>
+</body>
+ <script type="text/javascript" src="./main.js"></script>
+<script>
+  function myFunction() {
+  var x = document.getElementById("menulist");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  
+  </script>
+    <script type="text/javascript" >
+
+     window.addEventListener('DOMContentLoaded', (event) => {
+      loadPage();
+    });
+
+
+  </script>
+</html>
