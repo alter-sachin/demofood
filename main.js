@@ -76,11 +76,18 @@
       title.innerText = dish.name;
 
       section.appendChild(title);
+      const price = document.createElement('h3');
+      price.innerText = dish.price+" INR";
+      price.style.color = "green";
+      price.style.opacity = .5;
+
+
+      section.appendChild(price);
       const chatlogo = document.createElement('img');
       chatlogo.setAttribute('id','chatlogo');
       chatlogo.setAttribute('onClick',buildChatButtons(dish))
-      chatlogo.src = './chatbot.png';
-      section.appendChild(chatlogo);
+      //chatlogo.src = './chatbot.png';
+      //section.appendChild(chatlogo);
 
       dishContainer.appendChild(modelViewer);
       dishContainer.appendChild(section);
@@ -122,7 +129,7 @@
     "restaurant": {
         "categories": [
             {
-                "categoryName": "mains",
+                "categoryName": "Mains",
                 "dishes": [
                     {
                         "id": "11be52ac-29d0-4d38-88d2-4cedc9b5c855",
@@ -302,7 +309,7 @@
                 ]
             },
             {
-                "categoryName": "starters",
+                "categoryName": "Starters",
                 "dishes": [
                     {
                         "id": "d5b179b1-a3cb-404d-b4a8-7ef38218ba23",

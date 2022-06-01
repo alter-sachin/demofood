@@ -10,7 +10,9 @@
 
   <link rel="stylesheet" href="./styles.css" />
 
-
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+</style>
  
 
   <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
@@ -21,17 +23,40 @@
 
 <body>
    <div id="menu">
-    <div id="menulist">
+    <div class="topbar">
+      <span id="menuicon" onclick="startExp()"><img src="https://img.icons8.com/material-sharp/24/undefined/menu--v1.png" id="sideicon"></span>
+      <span id="centertext"><div class="dropdown">
+      <button class="dropbtn ">Menu  <img id="down" src="https://img.icons8.com/android/24/undefined/expand-arrow.png"/></button>
+      <div class="dropdown-content">
+        <a href="#Mains">Mains</a>
+        <a href="#Dessert">Dessert</a>
+        <a href="#Starters">Starters</a>
+      </div>
+    </div></span>
+      <span id="profile"><img src="https://img.icons8.com/color/48/undefined/circled-user-male-skin-type-7--v1.png"/></span>
+    </div>
+    <div id="titles">
+      <span id="title">Food</span>
+      <span id="title2">Offers</span>
+
+    </div>
+    <div id="myDIV">
+      <button class="btn active"><img src="https://img.icons8.com/material-outlined/24/undefined/pizza.png"/><a href="#Mains">Mains</a></button>
+      <button class="btn"><img src="https://img.icons8.com/material-outlined/24/undefined/cheesecake.png"/><a href="#Dessert">Dessert</a></button>
+      <button class="btn"><img src="https://img.icons8.com/material-outlined/24/undefined/dumplings.png"/><a href="#Starters">Starters</a></button>
+    </div>
+    <!-- <div id="menulist">
       <ul>
-        <li><a href="#starters">starters</a></li>
-      <li><a href="#mains">mains</a></li>
+        <li><a href="#starters">Starters</a></li>
+      <li><a href="#mains">Mains</a></li>
          <li><a href="#Dessert">Dessert</a></li>
     </ul>
     </div>
     <button class="button-5" role="button" onclick="myFunction()"> 
       Menu
-    </button>
+    </button> -->
     </div>
+
     <div id="videobox">
         <video id="bot"  autoplay muted controls loop>
             <source id="mp4source" src="https://foodassets.s3.ap-south-1.amazonaws.com/menu/videos/base_happy_squared.mp4" type="video/mp4">
@@ -43,6 +68,14 @@
         </div>
 
     </div>
+
+    <div id="welcome">
+      <img src="./icon.png" id="mainicon">
+      <div id="headline">Delicious foods.</div>
+      <div id="tagline">Let us help you discover the best food we have for you.</div>
+      <button id="startbutton"/ onclick="startExp()">Get Started</button>
+    </div>
+
   <div id="main"></div>
 </body>
  <script type="text/javascript" src="./main.js"></script>
@@ -55,7 +88,36 @@
     x.style.display = "none";
   }
 }
-  
+
+function startExp() {
+  var x = document.getElementById("welcome");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+
+const [red, green, blue] = [69, 111, 225]
+const section1 = document.querySelector('.dropbtn')
+
+window.addEventListener('scroll', () => {
+  const y = 1 + (window.scrollY || window.pageYOffset) / 150
+  const [r, g, b] = [250,100,0]
+  const [r1, g1, b1] = [255,255,255] 
+  section1.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+  section1.style.color = `rgb(${r1}, ${g1}, ${b1})`
+})
   </script>
     <script type="text/javascript" >
 
